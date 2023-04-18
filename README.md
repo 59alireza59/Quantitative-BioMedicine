@@ -1,5 +1,5 @@
 # Quantitative-BioMedicine
-In this case study, we aim to provide bioinformaticians with an effective framework for producing statistical reports based on the display plots of R software by reviewing the tools provided in this reliable software space.
+In this case study, we aim to provide bioinformaticians with an effective framework for the professional production of statistical metrics and reports based on the display of multiple descriptive statistics and plots in a single frame in the R environment.
 
 First, we qualitatively survey a clinical trial dataset published by Harvard Dataverse (see: https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/EA1SAP) using functions such as "describe", "describeBy", and "pairs.panels" available in the package "psych" (see the Required-packages file for the multiple installation method in R). For a better understanding and familiarity with the functions provided by these libraries, you can refer to the address "https://cran.r-project.org/web/packages/available_packages_by_date.html" and the information there. Using these functions, it is then very easy to generate an R report with basic summary descriptive statistics (see the Descriptive-statistics file).
 
