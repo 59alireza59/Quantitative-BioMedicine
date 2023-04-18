@@ -1,0 +1,13 @@
+# Use data() to load your specified dataset or list:
+data("bp_jhs")
+
+# To provide an analytical summary statistic, use describe():
+describe(bp_jhs)
+
+# describeBy() will give you a report with a basic summary of the statistics according to a grouping variable:
+describeBy(bp_jhs ~ Meal_Time,skew=FALSE,ranges=FALSE)
+describeBy(bp_jhs ~ Year,skew=FALSE,ranges=FALSE)
+
+# pairs.panels() is a useful descriptive statistic for small data sets. It to displays a scatterplot of matrices,
+# with bivariate scatterplots below the diagonal, histograms on the diagonal and Pearson correlation above the diagonal. 
+pairs.panels(bp_jhs,bg=c("yellow","blue"), pch=21,stars=TRUE)
