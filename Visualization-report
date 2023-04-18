@@ -1,0 +1,9 @@
+# Visualization
+library(bp)
+library(plyr)
+
+each(bp_ts_plots, bp_hist, bp_report)(data_processed)  # bp_ts_plots() returns Blood Pressure Time Series Plots,
+                                                       # bp_hist() displaies the frequencies of the SBP and DBP readings.
+                                                       # These histograms are formatted to complement the bp_scatter() function., and
+                                                       # bp_report() aggregates various visualisations and metrics on the supplied dataset 
+                                                       # into a cleanly formatted report.  
