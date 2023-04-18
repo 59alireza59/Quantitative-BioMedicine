@@ -1,3 +1,5 @@
-install.packages(c("psych", "bp"))  # Vectorised installation 
+install.packages(c("psych", "bp", "plyr"))  # Vectorised installation 
 library(psych) #  Data science tools for psychological, psychometric and personality research
 library(bp)  # Toolbox of statistical metrics and visualisations to analyse blood pressure data
+library(plyr) # It takes a large data structure, breaks it down into homogeneous pieces, 
+              # applies a function to each piece, and then puts all the results back together again.
