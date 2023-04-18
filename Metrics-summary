@@ -1,0 +1,60 @@
+
+# Data Processing
+library(bp)
+data("bp_jhs")  # The dataset includes HBPM measurements from a pilot study in 2019 
+                # within a single subject during sustained aerobic (endurance) exercise.
+
+# process_data() helps to pre-process the user's input data into
+# a format that can be used by other bp package functions:
+data_processed <- process_data(
+  bp_jhs,
+  bp_type = "abpm",
+  ap = NULL,
+  time_elap = NULL,
+  sbp = 'Sys.mmHg.',
+  dbp = 'Dias.mmHg.',
+  date_time = 'DateTime',
+  id = NULL,
+  group = NULL,
+  wake = NULL,
+  visit = NULL,
+  hr = 'Pulse.bpm.',
+  pp = NULL,
+  map = NULL,
+  rpp = NULL,
+  DoW = NULL,
+  ToD_int = NULL,
+  eod = NULL,
+  data_screen = TRUE,
+  SUL = 240,
+  SLL = 50,
+  DUL = 140,
+  DLL = 40,
+  HRUL = 220,
+  HRLL = 27,
+  inc_low = TRUE,
+  inc_crisis = TRUE,
+  agg = FALSE,
+  agg_thresh = 3,
+  collapse_df = FALSE,
+  dt_fmt = "ymd HMS",
+  chron_order = FALSE,
+  tz = "UTC"
+)
+
+# clinical trial Metrics
+library(plyr)
+
+# Time-Dependent Dispersion Metrics
+each(bp_arv, bp_sv)(data_processed)    # each() combines functions into one
+                                       # bp_arv() returns average real variability, and
+                                       # bp_sv() calculates the values of the successive variation
+
+# Time-Independent Dispersion Metrics
+each(p_mag, bp_range, bp_cv)(data_processed)  # p_mag() returns the magnitude (peak and trough) of the BP, 
+                                              # bp_range() displays the BP range, and
+                                              # where bp_cv() calculates the coefficient of variation
+
+# Sleep-dependent Metrics
+each(dip_calc, bp_sleep_metrics)(data_processed)  # dip_calc() returns nocturnal dipping % & classification, and
+                                                  # bp_sleep_metrics() shows the BP sleep metrics
