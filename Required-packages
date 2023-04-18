@@ -1,4 +1,3 @@
-install. packages(c("psych", "psychTools", "bp")) 
-library(psych)
-library(psychTools)
-library(bp)
+install. packages(c("psych", "bp")) 
+library(psych) #  Data science tools for psychological, psychometric and personality research
+library(bp)  # Toolbox of statistical metrics and visualisations to analyse blood pressure data
