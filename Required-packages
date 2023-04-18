@@ -1,0 +1,4 @@
+install. packages(c("psych", "psychTools", "bp")) 
+library(psych)
+library(psychTools)
+library(bp)
